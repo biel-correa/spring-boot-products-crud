@@ -50,4 +50,11 @@ public class ProductService {
         }
         return productRepository.save(original);
     }
+
+    public void deleteProductById(Long id) {
+        productRepository.findById(id).orElseThrow(
+                () -> new IllegalStateException("Product does not exist")
+        );
+        productRepository.deleteById(id);
+    }
 }
