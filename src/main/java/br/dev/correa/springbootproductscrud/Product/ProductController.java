@@ -31,4 +31,9 @@ public class ProductController {
     public Product createProduct(@RequestBody Product newProduct) {
         return productService.createProduct(newProduct);
     }
+
+    @PutMapping
+    public Product editProduct(@RequestBody Product product) {
+        return productService.editProduct(product);
+    }
 }
